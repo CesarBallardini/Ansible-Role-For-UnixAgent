@@ -1,0 +1,12 @@
+---
+- name: Install EPEL repository
+  package:
+      name: epel-release
+      state: present
+
+- name: Install the required packages in RedHat derivatives
+  package:
+    name: "{{ ocs_pkgreqs }}"
+    state: installed
+  tags:
+    - ocs_pkgreqs
